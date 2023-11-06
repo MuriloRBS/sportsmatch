@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPORTSMATCH</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkJZw8YbNbM7QKn7NK1izPwQqcn_f570Y&callback=initMap" async defer></script>
+</head>
+<body>
+    <header>
+    </div>
+    <div class="center-div">
+        <h1>SPORTSMATCH</h1>
+    </div>
+    <div class="right-div">
+    </header>
+
+    <main>
+        <section class="search">
+            <h2>Encontre um Local Esportivo</h2>
+            <input type="text" id="busca" placeholder="Digite o esporte ou local">
+            <button>Buscar</button>
+        </section>
+        <div id="map"></div>
+        <script>
+            let map;
+
+function initMap() {
+  const myLatLng = { lat: -23.561301242448295, lng: -46.560065189320945 };
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: myLatLng,
+    zoom: 14,
+    mapTypeControl: false,
+    streetViewControl: false
+  });
+  new google.maps.Marker({
+    position: { lat: -23.56194896657936, lng: -46.57189098701423},
+    map,
+    title: "Anália Beach",
+  });
+  new google.maps.Marker({
+    position: { lat: -23.555606883363037, lng: -46.559606469920155},
+    map,
+    title: "Parque Ceret",
+  });
+  
+  // Add controls to the map, allowing users to hide/show features.
+  const styleControl = document.getElementById("style-selector-control");
+
+  map.controls[google.maps.ControlPosition.TOP_LEFT].push(styleControl);
+  // Apply new JSON when the user chooses to hide/show features.
+  document.getElementById("hide-poi").addEventListener("click", () => {
+    map.setOptions({ styles: styles["hide"] });
+  });
+  document.getElementById("show-poi").addEventListener("click", () => {
+    map.setOptions({ styles: styles["default"] });
+  });
+}
+
+const styles = {
+  default: [],
+  hide: [
+    {
+      featureType: "poi.business",
+      stylers: [{ visibility: "off" }],
+    },
+    {
+      featureType: "transit",
+      elementType: "labels.icon",
+      stylers: [{ visibility: "off" }],
+    },
+  ],
+};
+
+window.initMap = initMap;
+
+        
+        </script>
+
+        <section class="featured-sports">
+            <h2>Esportes em Destaque</h2>
+            <div class="sport-card">
+                <img src="imagens/volei.jpg" alt="Volei" id="tenis">
+                <h3>Vôlei</h3>
+                <p>Encontre quadras e locais próximos e jogue com amigos.</p>
+            </div>
+            <div class="sport-card">
+                <img src="imagens/tenis.jpg" alt="Tênis" id="tenis">
+                <h3>Tênis</h3>
+                <p>Reserve quadras de tênis e participe de torneios locais.</p>
+            </div>
+            <!-- Adicione mais cards de esportes em destaque conforme necessário -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 SportsMatch</p>
+    </footer>
+</body>
+</html>

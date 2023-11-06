@@ -1,0 +1,153 @@
+/* Definindo estilos globais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f3f3f3;
+}
+
+/* Estilizando o cabeçalho */
+header {
+    background-color: #970909;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+header h1 {
+    font-size: 1.5rem;
+}
+
+/* Estilizando o conteúdo principal */
+main {
+    padding: 1rem;
+}
+
+#tenis{
+    max-width: 50%;
+    max-height: 50%;
+}
+/* Estilizando a seção de pesquisa */
+.search {
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
+.search input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.search button {
+    background-color: #810202;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+/* Estilizando os cartões de esportes em destaque */
+.featured-sports {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.sport-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 1rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.sport-card h3 {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+/* Estilizando o rodapé */
+footer {
+    text-align: center;
+    background-color: #970909;
+    color: #fff;
+    padding: 0.5rem;
+}
+
+/* Estilizando links */
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#map {
+    height: 400px; /* Defina a altura desejada para o espaço do mapa */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+.left-div img {
+    max-width: 50px; /* Ajuste o tamanho da imagem à esquerda conforme necessário */
+    margin-right: 10px;
+}
+
+.center-div {
+    flex: 1;
+    text-align: center;
+}
+
+.right-div {
+    flex: 1;
+}
+
+/* Estilos de tela pequena (responsivo) */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.2rem;
+    }
+    .sanduiche img{
+        width: 14px;
+    }
+    .search input {
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 95%;
+    }
+    .bloco{
+        display: inline-block;
+    }
+
+    
+    #map {
+        height: 300px; /* Defina a altura desejada para o espaço do mapa */
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-top: 1rem;
+    }
+
+    .center-div{
+    margin: 0; /* Remova a margem à direita */
+    display: inline-block;
+    }
+    .left-div {
+    margin-left: 0; /* Remova a margem à direita */
+    display: inline-block;
+    width: 35%;
+    }
+
+    .right-div {
+    display: none; /* Ocultar a terceira div em telas menores */
+    }
+    }
